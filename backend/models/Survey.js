@@ -20,9 +20,56 @@ const surveySchema = new mongoose.Schema({
     type: String,
     trim: true,
   },
+  difficultyRating: {
+    type: Number, 
+    min: 1,
+    max: 5,
+    required: true,
+  }, //PREGUNTAS AL JUEGO
+  customWords: {
+    type: Boolean, 
+    required: true,
+  },
+  additionalHints: {
+    type: Boolean, 
+    required: true,
+  },
+  wordQualityRating: {
+    type: Number,
+    min: 1,
+    max: 5,
+    required: true,
+  },
+  //PREGUNTAS AL DISEÑO
+  uiSatisfaction: {
+    type: Number,
+    min: 1,
+    max: 5,
+    required: true,
+  },
+  buttonVisibility: {
+    type: Number, 
+    min: 1,
+    max: 5,
+    required: true,
+  },
+  colorPalette: {
+    type: Number,
+    min: 1,
+    max: 5,
+    required: true,
+  },
+  navigationEase: {
+    type: Number, 
+    min: 1,
+    max: 5,
+    required: true,
+  },
+
   createdAt: {
     type: Date,
     default: Date.now,
   },
+
 });
 export default mongoose.model('Survey', surveySchema)
