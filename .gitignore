@@ -1,0 +1,24 @@
+# Ignorar la carpeta de archivos estáticos generada con Vite
+01-static/dist/
+01-static/node_modules/
+01-static/.vite/
+
+# Ignorar dependencias del backend
+backend/node_modules/
+
+# Ignorar archivos de entorno y configuración en el backend
+backend/.env
+backend/.env.local
+backend/.env.development
+backend/.env.production
+
+# Caché de logs y dependencias
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Ignorar directorios y archivos del sistema
+.DS_Store
+Thumbs.db
