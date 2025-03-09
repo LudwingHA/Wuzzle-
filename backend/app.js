@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
 import router from "./routes/router.js";
+import cookieParser from "cookie-parser";
 
 dotenv.config();
 const app = express();
@@ -15,7 +16,11 @@ mongoose
   });
 
 //middleware
-app.use(cors());
+app.use(cors({
+  origin: "http://localhost:5173", 
+  credentials: true
+}));
+app.use(cookieParser())
 app.use(express.json());
 app.listen(PORT_SERVER, () => {
   console.log(

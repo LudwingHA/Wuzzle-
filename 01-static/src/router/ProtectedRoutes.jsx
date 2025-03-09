@@ -1,13 +1,13 @@
-import { Outlet, Navigate } from "react-router-dom";
-import React, { useState } from "react";
+import { Navigate, Outlet } from "react-router-dom";
+import { useAuth } from "../auth/AuthProvider";
+
 
 const ProtectedRoutes = () => {
-  const [Aunthenticated, setAunthenticated] = useState(false);
-  return Aunthenticated ? (
-    <Outlet></Outlet>
-  ) : (
-    <Navigate to={"/login"}></Navigate>
-  );
-};
+  const { isAuthenticated, isLoading } = useAuth();
+  if (isLoading) {
+    return <div>Cargando...</div>;
+  }
 
-export default ProtectedRoutes;
+  return isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
+};
+export default ProtectedRoutes

@@ -48,7 +48,7 @@ userShema.pre("save", function (next) {
     });
   }
 });
-userShema.methods.commparePassword = async (password, hash) => {
+userShema.methods.comparePassword = async (password, hash) => {
   const same = await bcrypt.compare(password, hash);
   return same;
 };
