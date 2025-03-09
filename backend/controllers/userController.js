@@ -14,12 +14,14 @@ export const registerUser = async (req, res, next) => {
       error: "Todos los datos son requeridos",
     });
   }
-  const userExists = await User.exists(username, email);
-  if (userExists)
-    return res.status(400).json({
-      error: "El usuario o email ya está registrado",
-    });
-
+  const userExists = await User.exists(username.toLowerCase(), email.toLowerCase());
+    
+    // Si el usuario o el email ya están registrados, devolver un error
+    if (userExists) {
+      return res.status(400).json({
+        error: "El usuario o email ya está registrado",
+      });
+  }
   try {
     const user = new User({
       username: username.toLowerCase(),
@@ -72,9 +74,9 @@ export const authenticateUser = async (req, res) => {
     // Asegúrate de que la cookie se esté configurando correctamente
     res.cookie("refreshToken", refreshToken, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production", 
+      secure: process.env.NODE_ENV === "production",
       sameSite: "Strict",
-      maxAge: 7 * 24 * 60 * 60 * 1000, 
+      maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
     return res.status(200).json({
@@ -91,27 +93,22 @@ export const authenticateUser = async (req, res) => {
 // Refrescar token de acceso
 export const refreshAccessToken = async (req, res) => {
   const refreshToken = req.cookies.refreshToken;
-  console.log("Se hizo la peticion refreshAccessToken")
+  console.log("Se hizo la peticion refreshAccessToken");
   if (!refreshToken) {
     return res.status(400).json({ error: "Refresh token requerido" });
   }
-  jwt.verify(
-    refreshToken,
-    process.env.REFRESH_TOKEN_SECRET,
-    (err, decoded) => {
-      if (err) return res.status(401).jsom({ error: "Refresh token invalido" });
-      const newAccessToken = generateRefreshToken({ _id: decoded.id });
-      console.log(newAccessToken)
-      res.json({ accessToken: newAccessToken });
-    }
-  );
+  jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, decoded) => {
+    if (err) return res.status(401).jsom({ error: "Refresh token invalido" });
+    const newAccessToken = generateRefreshToken({ _id: decoded.id });
+    console.log(newAccessToken);
+    res.json({ accessToken: newAccessToken });
+  });
 };
 
-export const profile = async (req, res) =>{
+export const profile = async (req, res) => {
   const user = await User.findById(req.userId, { password: 0 });
   res.json(user);
-}
-
+};
 
 // Cerrar sesión
 export const logoutUser = (req, res) => {

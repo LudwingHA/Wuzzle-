@@ -71,6 +71,7 @@ export const Login = () => {
                 name="identifier"
                 placeholder="Ingresa tu usuario o email"
                 value={identifier}
+                autoComplete="username"
                 onChange={(e) => setIdentifier(e.target.value)}
               />
             </div>
@@ -83,6 +84,7 @@ export const Login = () => {
                 name="password"
                 placeholder="Ingresa tu contraseña"
                 value={password}
+                autoComplete="current-password"
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>

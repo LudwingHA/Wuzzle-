@@ -19,7 +19,6 @@ router.post('/api/logout', logoutUser)
 router.post('/api/profile', verifyToken, profile)
 
 
-
 //survey
 router.get('/api/survey', getAllSurvey)
 router.post('/api/survey', createSurvey)

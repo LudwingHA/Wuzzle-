@@ -52,13 +52,13 @@ userShema.methods.comparePassword = async (password, hash) => {
   const same = await bcrypt.compare(password, hash);
   return same;
 };
-
 userShema.statics.exists = async function (username, email) {
-  return (
-    (await this.model("User").findOne({ $or: [{ email }, { username }] })) !==
-    null
-  );
+  // Comprobar si el username o el email ya están registrados
+  return await this.findOne({
+    $or: [{ email }, { username }]
+  });
 };
+
 userShema.methods.createAccessToken = (user) => {
   return generateAccessToken(getUserInfo(user));
 };
