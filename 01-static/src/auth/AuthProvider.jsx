@@ -3,6 +3,7 @@ import jwt_decode from "jwt-decode";
 import axios from "axios";
 import { APT_URL } from "../constans/apiEndpoints";
 
+
 const AuthContext = createContext({
   isAuthenticated: false,
   accessToken: "",
@@ -51,8 +52,10 @@ export const AuthProvider = ({ children }) => {
   const [userInfo, setUserInfo] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
+
   const saveUser = (userData) => {
     const { accessToken } = userData;
+    console.log(userData)
     setAccessToken(accessToken);
     setUserInfo(jwt_decode(accessToken));
     localStorage.setItem("accessToken", accessToken);
@@ -68,6 +71,7 @@ export const AuthProvider = ({ children }) => {
     setIsAuthenticated(false);
     setAccessToken("");
     setUserInfo({});
+
     localStorage.removeItem("accessToken");
   };
   useEffect(() => {
@@ -81,6 +85,7 @@ export const AuthProvider = ({ children }) => {
         setAccessToken(token);
         setIsAuthenticated(true);
         setUserInfo(jwt_decode(token));
+        console.log(`esto es de authprovider ${jwt_decode(token)}` )
       } else {
         setIsAuthenticated(false);
       }

@@ -1,4 +1,16 @@
 :root {
+  --primary-bg: white;
+  --title-primary: #66997b;
+  --subtitle-primary: #364461;
+  --coffe-primary: #574c41;
+  --green-primary: #59a87d;
+  --red-primary: #e36b6b;
+  --red-yellow: #e3ba6a;
+  --btn-primary: #4d686f;
+  --btn-primary-hover: #465559;
+  --btn-secundary: #b42529;
+  --btn-secundary-hover: #9b0005;
+  --gray-primary: #a6988a;
 }
 * {
   margin: 0;
@@ -26,42 +38,110 @@ nav {
   border-radius: 18px;
   z-index: 10;
 }
-nav div {
-  text-align: center;
-  width: 50%;
+nav a {
+  text-decoration: none;
+  opacity: 1;
+  color: black;
 }
-nav div a{
-    text-decoration: none;
-    opacity: 0.7;
-    color: black;
+nav .navbar-title a {
+  color: var(--title-primary);
 }
 
-nav div li {
+.navbar-links {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   list-style: none;
+  gap: 40px;
 }
-main{
-    margin: auto;
-    width: 80%;
-    margin-top: 130px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
-    padding: 40px;
-    border-radius: 10px;
+.title-nav {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.dropdown {
+  position: relative;
+}
+
+.dropdown-button {
+  background-color: var(--btn-primary);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.dropdown-button:hover {
+  background-color: var(--btn-primary-hover);
+}
+
+.dropdown-menu {
+  position: absolute;
+  margin-top: 5px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  justify-items: center;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  z-index: 1;
+}
+
+.dropdown-item {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: white;
+  text-align: left;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+.a-active{
+  text-decoration: overline;
+  color: var(--btn-primary);
+}
+.a-dropdown-menu{
+  font-weight: 600;
+}
+.a-dropdown-menu:hover{
+  font-weight: 600;
+  text-decoration: overline;
+}
+
+.btn-longout{
+  border: none;
+  padding: 5px 10px;
+  margin-top: 5px;
+  cursor: pointer;
+  background-color: var(--btn-secundary);
+  color: white;
+}
+.btn-longout:hover{
+  background-color: var(--btn-secundary-hover);
+}
+main {
+  margin: auto;
+  width: 55%;
+  margin-top: 130px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+  padding: 40px;
+  border-radius: 10px;
 }
 
 .form-container {
   margin: 40px auto;
   padding: 10px;
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 
-.login-form fieldset{
+.login-form fieldset {
   border: none;
   padding: 30px;
-  
 }
 
 legend {
@@ -82,7 +162,6 @@ legend {
 }
 
 .input-group input {
- 
   width: 100%;
   padding: 10px;
   border-radius: 5px;
@@ -91,15 +170,15 @@ legend {
 }
 
 .input-group input:focus {
-  border-color: #007bff;
+  border-color: var(--btn-primary);
   outline: none;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  box-shadow: 0 0 5px var(--btn-primary);
 }
 
 .btn-login {
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
+  background-color: var(--btn-primary);
   color: white;
   border: none;
   border-radius: 5px;
@@ -109,7 +188,7 @@ legend {
 }
 
 .btn-login:hover {
-  background-color: #0056b3;
+  background-color: var(--btn-primary);
 }
 
 .register-link {
@@ -119,7 +198,7 @@ legend {
 }
 
 .register-link a {
-  color: #007bff;
+  color: var(--btn-primary);
   text-decoration: none;
   font-weight: bold;
 }
@@ -127,3 +206,47 @@ legend {
 .register-link a:hover {
   text-decoration: underline;
 }
+.home{
+  border: 3px solid var(--coffe-primary);
+  border-radius: 10px;
+  padding: 20px 30px;
+}
+.home__title{
+  text-align: center;
+  font-size: 4rem;
+  color: var(--title-primary);
+}
+.home__subtitle{
+  color: var(--subtitle-primary);
+  margin-bottom: 20px;
+}
+.home__section{
+  margin-bottom: 20px;
+  text-align: justify;
+}
+.home__rule{
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+.home__letter{
+  font-size: 45px;
+  font-weight: 600;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  width: 50px;
+}
+.home__letter--correct{
+  background-color: var(--green-primary);
+}
+.home__letter--misplaced{
+  background-color: var(--red-yellow);
+}
+.home__letter--incorrect{
+  background-color: var(--gray-primary);
+}
+
