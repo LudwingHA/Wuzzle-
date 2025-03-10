@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from "../../layout/Layout";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
   return (
@@ -48,6 +49,61 @@ export const Home = () => {
             </div>
 
           </section>
+          <section className="home__section home__example">
+          <h2 className="home__subtitle">Ejemplo de juego</h2>
+          <p className="home__text">
+            Supongamos que la palabra oculta es <strong>"SOLAR"</strong>. Aquí hay un ejemplo de cómo se verían los intentos:
+          </p>
+
+          <div className="home__attempt">
+            <div className="home__letter home__letter--incorrect">T</div>
+            <div className="home__letter home__letter--misplaced">A</div>
+            <div className="home__letter home__letter--incorrect">P</div>
+            <div className="home__letter home__letter--incorrect">A</div>
+            <div className="home__letter home__letter--incorrect">S</div>
+          </div>
+          <p className="home__description">
+            En el primer intento (<strong>TAPAS</strong>): 
+            "T", "P" y la segunda "A" no están en la palabra. 
+            "A" está en la palabra pero en la posición incorrecta.
+            "S" no está en la posición correcta.
+          </p>
+
+          <div className="home__attempt">
+            <div className="home__letter home__letter--correct">S</div>
+            <div className="home__letter home__letter--correct">O</div>
+            <div className="home__letter home__letter--correct">L</div>
+            <div className="home__letter home__letter--misplaced">E</div>
+            <div className="home__letter home__letter--correct">R</div>
+          </div>
+          <p className="home__description">
+            En el segundo intento (<strong>SOLER</strong>):  
+            "S", "O", "L" y "R" están en la posición correcta.  
+            "E" está en la palabra, pero en la posición incorrecta.
+          </p>
+
+          <div className="home__attempt">
+            <div className="home__letter home__letter--correct">S</div>
+            <div className="home__letter home__letter--correct">O</div>
+            <div className="home__letter home__letter--correct">L</div>
+            <div className="home__letter home__letter--correct">A</div>
+            <div className="home__letter home__letter--correct">R</div>
+          </div>
+          <p className="home__description">
+            En el tercer intento (<strong>SOLAR</strong>), ¡la palabra es correcta! 🎉
+          </p>
+        </section>
+        <section className="home__section home__play-now">
+          <h2 className="home__subtitle">¿Listo para jugar?</h2>
+          <p className="home__text">
+            Pon a prueba tu habilidad y adivina la palabra del día. ¡Compite con
+            tus amigos y mejora tu récord!
+          </p>
+
+          <Link to="/game" className="home__play-button">
+            🎮 Jugar Ahora
+          </Link>
+        </section>
         </div>
       </Layout>
     </>

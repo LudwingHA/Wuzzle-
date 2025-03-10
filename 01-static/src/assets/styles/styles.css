@@ -110,6 +110,15 @@ nav .navbar-title a {
   font-weight: 600;
   text-decoration: overline;
 }
+.dropdown-menu p{
+  display: flex;
+  gap: 5px;
+}
+.username{
+  font-weight: 500;
+  color: var(--title-primary);
+  text-transform: uppercase;
+}
 
 .btn-longout{
   border: none;
@@ -249,4 +258,104 @@ legend {
 .home__letter--incorrect{
   background-color: var(--gray-primary);
 }
+.home__example {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+}
 
+.home__attempt {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+.home__play-button{
+  display: block;
+  margin: auto;
+  width: 40%;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  border-radius: 20px;
+  background-color: var(--btn-primary);
+  text-decoration: none;
+}
+.home__play-button:hover{
+  transition: 400ms;
+  background-color: var(--btn-primary-hover);
+}
+.content-game{
+  border: 3px solid var(--coffe-primary);
+  border-radius: 10px;
+  padding: 20px 30px;
+}
+.game__attempt{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.game__attempt--items{
+  display: flex;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+.game__attempt--item{
+  width: 15%;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center; 
+  width: 50px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  font-weight: 700;
+  font-size: 30px;
+}
+.attemp-green{
+  background-color: var(--green-primary);
+}
+.attemp-yellow{
+  background-color: var(--red-yellow);
+}
+.attemp-gray{
+  background-color: var(--gray-primary);
+}
+.game__input{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.game__input input{
+  width: 45%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.game__btn{
+  border: none;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: var(--btn-primary);
+  color: white;
+  cursor: pointer;
+}
+.message-game{
+  background-color: var(--coffe-primary);
+  text-align: center;
+  margin: auto;
+  width: 70%;
+  padding: 20px;
+  color: white;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+@media (max-width: 768px) {
+  main {width: 90%;
+  }
+}

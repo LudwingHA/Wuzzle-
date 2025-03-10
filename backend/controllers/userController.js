@@ -14,13 +14,16 @@ export const registerUser = async (req, res, next) => {
       error: "Todos los datos son requeridos",
     });
   }
-  const userExists = await User.exists(username.toLowerCase(), email.toLowerCase());
-    
-    // Si el usuario o el email ya están registrados, devolver un error
-    if (userExists) {
-      return res.status(400).json({
-        error: "El usuario o email ya está registrado",
-      });
+  const userExists = await User.exists(
+    username.toLowerCase(),
+    email.toLowerCase()
+  );
+
+  // Si el usuario o el email ya están registrados, devolver un error
+  if (userExists) {
+    return res.status(400).json({
+      error: "El usuario o email ya está registrado",
+    });
   }
   try {
     const user = new User({
@@ -37,6 +40,34 @@ export const registerUser = async (req, res, next) => {
     return res.status(500).json({
       error: `ERROR AL GUARDAR EL REGISTRO ${error}`,
     });
+  }
+};
+
+export const incrementWins = async (req, res) => {
+  try {
+    const { userId } = req.body;
+
+    if (!userId) {
+      return res.status(400).json({ error: "ID de usuario inválido" });
+    }
+
+    const user = await User.findByIdAndUpdate(
+      userId,
+      { $inc: { wins: 1 } },
+      { new: true }
+    );
+
+    if (!user) {
+      return res.status(404).json({ error: "Usuario no encontrado" });
+    }
+
+    return res.status(200).json({
+      message: "Victorias actualizadas correctamente",
+      wins: user.wins,
+    });
+  } catch (error) {
+    console.error("Error al incrementar victorias:", error);
+    return res.status(500).json({ error: "Error interno del servidor" });
   }
 };
 

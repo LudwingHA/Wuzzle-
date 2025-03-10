@@ -14,14 +14,26 @@ export const NavBar = () => {
     <>
       <nav>
         <div className="navbar-title">
-          <Link to={'/'} className="title-nav">WUZZLE</Link>
+          <Link to={"/"} className="title-nav">
+            WUZZLE
+          </Link>
         </div>
         <div className="navbar-links">
           <li>
-            <NavLink to={"/"} className={({isActive}) => (isActive ? "a-active": "")}>Inicio</NavLink>
+            <NavLink
+              to={"/"}
+              className={({ isActive }) => (isActive ? "a-active" : "")}
+            >
+              Inicio
+            </NavLink>
           </li>
           <li>
-            <NavLink to={"/game"} className={({isActive}) => (isActive ? "a-active": "")}>Jugar</NavLink>
+            <NavLink
+              to={"/game"}
+              className={({ isActive }) => (isActive ? "a-active" : "")}
+            >
+              Jugar
+            </NavLink>
           </li>
           <li>
             {isAuthenticated ? (
@@ -34,15 +46,33 @@ export const NavBar = () => {
                 </button>
                 {isOpenAccount && (
                   <div className="dropdown-menu">
-                    <span>Hola! {userInfo.user.username}</span>
+                    <p>
+                      Hola!{" "}
+                      <span className="username">{userInfo.user.username}</span>
+                    </p>
                     <hr />
-                    <NavLink to={"/preferences"} className={({isActive}) => (isActive ? "a-active": "a-dropdown-menu")}>Configuraciones</NavLink>
-                    <button onClick={handleLongout} className="btn-longout"> Cerrar sesión</button>
+                    <NavLink
+                      to={"/preferences"}
+                      className={({ isActive }) =>
+                        isActive ? "a-active" : "a-dropdown-menu"
+                      }
+                    >
+                      Configuraciones
+                    </NavLink>
+                    <button onClick={handleLongout} className="btn-longout">
+                      {" "}
+                      Cerrar sesión
+                    </button>
                   </div>
                 )}
               </div>
             ) : (
-              <NavLink to={"/login"} className={({isActive}) => (isActive ? "a-active": "")}>Ingresar</NavLink>
+              <NavLink
+                to={"/login"}
+                className={({ isActive }) => (isActive ? "a-active" : "")}
+              >
+                Ingresar
+              </NavLink>
             )}
           </li>
         </div>
