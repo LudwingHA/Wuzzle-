@@ -4,6 +4,7 @@ import { useAuth } from "./AuthProvider";
 import axios from "axios";
 import { APT_URL } from "../constans/apiEndpoints";
 import Alert from "../components/alerts/Alert";
+import LayoutAuth from "./layout/LayoutAuth";
 
 export const Login = () => {
   const [identifier, setIdentifier] = useState("");
@@ -52,6 +53,7 @@ export const Login = () => {
   };
   return (
     <>
+      <LayoutAuth>
       <div className="form-container">
         {alertVisible && messageError && (
           <Alert
@@ -99,6 +101,7 @@ export const Login = () => {
           </fieldset>
         </form>
       </div>
+      </LayoutAuth>
     </>
   );
 };

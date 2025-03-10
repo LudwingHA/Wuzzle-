@@ -99,28 +99,28 @@ nav .navbar-title a {
   font-size: 16px;
   transition: background-color 0.3s ease;
 }
-.a-active{
+.a-active {
   text-decoration: overline;
   color: var(--btn-primary);
 }
-.a-dropdown-menu{
+.a-dropdown-menu {
   font-weight: 600;
 }
-.a-dropdown-menu:hover{
+.a-dropdown-menu:hover {
   font-weight: 600;
   text-decoration: overline;
 }
-.dropdown-menu p{
+.dropdown-menu p {
   display: flex;
   gap: 5px;
 }
-.username{
+.username {
   font-weight: 500;
   color: var(--title-primary);
   text-transform: uppercase;
 }
 
-.btn-longout{
+.btn-longout {
   border: none;
   padding: 5px 10px;
   margin-top: 5px;
@@ -128,7 +128,7 @@ nav .navbar-title a {
   background-color: var(--btn-secundary);
   color: white;
 }
-.btn-longout:hover{
+.btn-longout:hover {
   background-color: var(--btn-secundary-hover);
 }
 main {
@@ -215,31 +215,31 @@ legend {
 .register-link a:hover {
   text-decoration: underline;
 }
-.home{
+.home {
   border: 3px solid var(--coffe-primary);
   border-radius: 10px;
   padding: 20px 30px;
 }
-.home__title{
+.home__title {
   text-align: center;
   font-size: 4rem;
   color: var(--title-primary);
 }
-.home__subtitle{
+.home__subtitle {
   color: var(--subtitle-primary);
   margin-bottom: 20px;
 }
-.home__section{
+.home__section {
   margin-bottom: 20px;
   text-align: justify;
 }
-.home__rule{
+.home__rule {
   display: flex;
   align-items: center;
   gap: 30px;
   margin-bottom: 20px;
 }
-.home__letter{
+.home__letter {
   font-size: 45px;
   font-weight: 600;
   border: 2px solid white;
@@ -249,13 +249,13 @@ legend {
   color: white;
   width: 50px;
 }
-.home__letter--correct{
+.home__letter--correct {
   background-color: var(--green-primary);
 }
-.home__letter--misplaced{
+.home__letter--misplaced {
   background-color: var(--red-yellow);
 }
-.home__letter--incorrect{
+.home__letter--incorrect {
   background-color: var(--gray-primary);
 }
 .home__example {
@@ -271,7 +271,7 @@ legend {
   gap: 10px;
   margin: 10px 0;
 }
-.home__play-button{
+.home__play-button {
   display: block;
   margin: auto;
   width: 40%;
@@ -281,27 +281,28 @@ legend {
   border-radius: 20px;
   background-color: var(--btn-primary);
   text-decoration: none;
+  margin-top: 20px;
 }
-.home__play-button:hover{
+.home__play-button:hover {
   transition: 400ms;
   background-color: var(--btn-primary-hover);
 }
-.content-game{
+.content-game {
   border: 3px solid var(--coffe-primary);
   border-radius: 10px;
   padding: 20px 30px;
 }
-.game__attempt{
+.game__attempt {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.game__attempt--items{
+.game__attempt--items {
   display: flex;
   margin-bottom: 10px;
   gap: 10px;
 }
-.game__attempt--item{
+.game__attempt--item {
   width: 15%;
   height: 35px;
   display: flex;
@@ -310,34 +311,34 @@ legend {
   border: 2px solid white;
   border-radius: 10px;
   padding: 20px;
-  text-align: center; 
+  text-align: center;
   width: 50px;
   box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
   font-weight: 700;
   font-size: 30px;
 }
-.attemp-green{
+.attemp-green {
   background-color: var(--green-primary);
 }
-.attemp-yellow{
+.attemp-yellow {
   background-color: var(--red-yellow);
 }
-.attemp-gray{
+.attemp-gray {
   background-color: var(--gray-primary);
 }
-.game__input{
+.game__input {
   display: flex;
   justify-content: center;
   gap: 10px;
 }
-.game__input input{
+.game__input input {
   width: 45%;
   padding: 10px;
   border-radius: 10px;
   font-size: 20px;
   font-weight: 600;
 }
-.game__btn{
+.game__btn {
   border: none;
   padding: 5px 10px;
   border-radius: 10px;
@@ -345,7 +346,7 @@ legend {
   color: white;
   cursor: pointer;
 }
-.message-game{
+.message-game {
   background-color: var(--coffe-primary);
   text-align: center;
   margin: auto;
@@ -355,7 +356,24 @@ legend {
   margin-top: 10px;
   border-radius: 10px;
 }
+footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2rem;
+  background-color: var(--title-primary);
+  text-align: center;
+  padding: 10px 30px;
+  margin-top: 40px;
+}
+
 @media (max-width: 768px) {
-  main {width: 90%;
+  main {
+    width: 90%;
   }
 }
