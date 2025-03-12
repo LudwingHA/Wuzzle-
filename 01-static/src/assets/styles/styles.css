@@ -376,4 +376,40 @@ footer {
   main {
     width: 90%;
   }
+  nav{
+    top: 0;
+    width: 100%;
+    flex-direction: column;
+    padding: 20px;
+  }
+  .navbar-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .navbar-title a{
+    text-align: center;
+  }
+  .dropdown-menu{
+    right: 10px;
+  }
+  .home__attempt{
+    margin: auto;
+    width: 80%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+  .home__letter{
+    font-size: 1rem;
+  }
+  .game__attempt--items{
+    gap: 2px;
+  }
+  .game__attempt--item{
+    width: 10px;
+    height: 15px;
+    font-size: 30px;
+  }
+
 }

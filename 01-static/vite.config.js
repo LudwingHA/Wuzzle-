@@ -7,4 +7,8 @@ export default defineConfig({
   optimizeDeps: {
     include: ['jwt-decode'], // Asegura que Vite optimice esta dependencia
   },
+  server: {
+    host: true,
+    port: 5173
+  }
 });

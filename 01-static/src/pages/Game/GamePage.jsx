@@ -50,7 +50,7 @@ const GamePage = () => {
 
     if (guess.toUpperCase() === word) {
       setMessage(
-        `¡Felicidades ${username.toUpperCase()}! 🤩 ¡Has adivinado la palabra!`
+        `¡Felicidades ${username.toUpperCase()}! 🐲 ¡Has adivinado la palabra!`
       );
       try {
         await axios.post(`${APT_URL}/increment-wins`, {userId});
@@ -63,7 +63,7 @@ const GamePage = () => {
       }, 2000);
     } else if (currentAttempt + 1 >= 6) {
       setMessage(
-        `¡Perdiste ${username.toUpperCase()}! 😪 La palabra era "${word}".`
+        `¡Perdiste ${username.toUpperCase()}! 🤣 La palabra era "${word}".`
       );
       setTimeout(() => {
         fetchRandomWord();

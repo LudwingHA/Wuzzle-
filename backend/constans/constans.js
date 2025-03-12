@@ -1,0 +1,1 @@
+export const URL_LOCAL = `192.168.100.17`
